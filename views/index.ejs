@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <title>dVoting</title>
+</head>
+<body>
+    <div class="container">
+        <h1>dVoting: Decentralized Voting</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td id="candidate-1"><%= votes['candidate-1'] %></td>
+                    </tr>
+                    <tr>
+                        <td>Nick</td>
+                        <td id="candidate-2"><%= votes['candidate-2'] %></td>
+                    </tr>
+                    <tr>
+                        <td>Ana</td>
+                        <td id="candidate-3"><%= votes['candidate-3'] %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <% if (locals.message) { %>
+            <p><%= locals.message %><p>
+        <% } %>
+        <form method="post" action="/vote">
+            <input type="text" name="candidate" required placeholder="Candidate">
+            <input type="submit" value="Vote" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script>
+</script>
+</html>
